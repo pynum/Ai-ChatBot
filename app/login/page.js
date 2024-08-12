@@ -167,7 +167,7 @@ export default function Login() {
                 {loading ? <CircularProgress size={24} /> : 'Login '}
               </Button>
               <Typography variant="body2" align="center" color="rgba(255, 255, 255, 0.7)">
-                Don't have an account?{' '}
+                Don&apos;t have an account?{' '}
                 <Button color="primary" onClick={() => router.push('/signup')}>
                   Sign Up
                 </Button>
