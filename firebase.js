@@ -13,14 +13,6 @@ const firebaseConfig = {
   messagingSenderId: "50920708353",
   appId: "1:50920708353:web:4ff090fa9007e14f0c6300",
   measurementId: "G-TC3EPYHSCV"
-
-  // apiKey: "AIzaSyBTIjWsgvtJFE4Y_NZidIBr3ln45pY6lsg",
-  // authDomain: "pantry-tracker-48385.firebaseapp.com",
-  // projectId: "pantry-tracker-48385",
-  // storageBucket: "pantry-tracker-48385.appspot.com",
-  // messagingSenderId: "809094753792",
-  // appId: "1:809094753792:web:72b47147c8385abce432e5",
-  // measurementId: "G-68V85GR579"
 };
 
 // Initialize Firebase
