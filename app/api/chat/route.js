@@ -16,6 +16,10 @@ export async function POST(request) {
     const data = await request.json();
     const { messages, language } = data;
 
+    if (!messages || !Array.isArray(messages)) {
+      throw new Error('Invalid messages format');
+    }
+
     const systemPrompt = systemPrompts[language] || systemPrompts.English;
 
     const response = await groq.chat.completions.create({
@@ -28,11 +32,15 @@ export async function POST(request) {
       stream: false,
     });
 
+    if (!response || !response.choices || response.choices.length === 0) {
+      throw new Error('Invalid API response');
+    }
+
     const assistantMessage = response.choices[0].message.content;
 
     return new NextResponse(assistantMessage);
   } catch (error) {
-    console.error(error);
+    console.error('Error in /api/chat route:', error);
     return new NextResponse(JSON.stringify({ error: 'Error generating response' }), { status: 500 });
   }
 }
